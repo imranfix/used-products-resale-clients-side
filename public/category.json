@@ -1,0 +1,21 @@
+[
+    {
+
+      "_id": "01",
+      "name": "Biography",
+      "img": "https://asset20.ckassets.com/blog/wp-content/uploads/sites/5/2021/06/The-Diary-Of-a-Young-Girl-by-Anne-Frank-1024x512.png"
+    },
+
+    {
+      "_id": "02",
+      "name": "Novel",
+      "img": "https://fivebooks.com/app/uploads/2010/01/0140268529.01.LZ_.jpg"
+    },
+
+    {
+      "_id": "03",
+      "name": "Politics",
+      "img": "https://media.karousell.com/media/photos/products/2016/10/24/the_politics_book_1477317672_d0b22212.jpg"
+    }
+  
+  ]

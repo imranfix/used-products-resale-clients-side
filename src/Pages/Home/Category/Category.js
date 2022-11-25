@@ -22,7 +22,7 @@ const Category = () => {
            
             {
 
-                categories.map(category => <CategoryCard
+                categories?.map(category => <CategoryCard
                 key={category._id}
                 category={category}
                 ></CategoryCard>)

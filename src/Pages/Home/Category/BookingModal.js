@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 
 
 const BookingModal = ({books, setBooks}) => {
     const {name, location, yearsOfUse, resale_price, sellersName} = books;
+
+    const {user} = useContext(AuthContext);
 
     const handleBookingBook = event =>{
       event.preventDefault();
@@ -42,8 +45,8 @@ const BookingModal = ({books, setBooks}) => {
 
         <form onSubmit={handleBookingBook} className='grid grid-cols-1 gap-2 mt-8'>
 
-        <input name="name" type="text" placeholder="user name" className="input w-full input-bordered" />
-        <input name="email" type="email" placeholder="email address" className="input w-full input-bordered" />
+        <input name="name" type="text" placeholder="user name" defaultValue={user?.displayName} disabled className="input w-full input-bordered" />
+        <input name="email" type="email" placeholder="email address" defaultValue={user?.email} disabled className="input w-full input-bordered" />
         <input name="books" type="text" disabled value={name} placeholder="Books name" className="input w-full input-bordered" />
         <input name="price" type="text" placeholder="Item price" disabled value={resale_price}  className="input w-full input-bordered" />
         <input name="phone" type="text" placeholder="phone number" className="input w-full input-bordered" />

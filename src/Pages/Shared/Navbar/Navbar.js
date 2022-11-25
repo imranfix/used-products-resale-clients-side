@@ -23,12 +23,12 @@ const Navbar = () => {
     const navbarItems = <React.Fragment>
         
             <li><Link className='font-bold' to="/">Home</Link></li>
-            <li><Link className='font-bold' to="/about">Blog</Link></li>
+            <li><Link className='font-bold' to="/blogs">Blogs</Link></li>
 
             {
                   user?.uid ?
                   <>
-                    <li><Link>Dashboard</Link></li>
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                     <li><button
                     onClick={handleLogOutUser}
                      className='font-bold'>Log Out</button></li>

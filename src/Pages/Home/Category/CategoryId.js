@@ -1,3 +1,5 @@
+import { async } from '@firebase/util';
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import BookingModal from './BookingModal';
 import ProductItem from './ProductItem';
@@ -9,6 +11,16 @@ const CategoryId = () => {
     // const {name} = categoryList;
     const [products, setProducts] = useState([]);
     const [books, setBooks] = useState(null);
+
+    // use tanstack query:
+    // const {data: products = []} = useQuery({
+    //     queryKey: ['products'],
+    //     queryFn: async() =>{
+    //         const res = await fetch('http://localhost:5000/products').then(res => res.json())
+    //         const data = await res.json();
+    //         return data;
+    //     }
+    // })
 
 
     useEffect(  () =>{

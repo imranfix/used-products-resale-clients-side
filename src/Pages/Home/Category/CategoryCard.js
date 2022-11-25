@@ -10,7 +10,7 @@ const CategoryCard = ({category}) => {
 
     return (
         <div className="card card-compact w-76 bg-base-100 shadow-xl mt-8">
-            <Link to="/products">
+            <Link to='/products'>
             <figure><img src={img} alt="Shoes" /></figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>

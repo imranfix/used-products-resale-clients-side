@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
 import CategoryCard from './CategoryCard';
 
@@ -5,6 +6,8 @@ import CategoryCard from './CategoryCard';
 
 const Category = () => {
     const [categories, setCategories] = useState([]);
+
+       
 
     useEffect(  () =>{
         fetch('http://localhost:5000/category')

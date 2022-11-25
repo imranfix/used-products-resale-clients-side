@@ -12,17 +12,24 @@ const Login = () => {
     // Error State:
     const [userloginError, setUserLoginError] = useState('');
 
+    // redirect users:
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from.pathname || '/';
+
 
     // 1. handle login function:
     const handleLoginForm = data =>{
         console.log(data);
         setUserLoginError('');
-        
+
     // SignIn Function:
      signIn(data.email, data.password)
      .then(result => {
         const user = result.user;
         console.log(user);
+        navigate (from, {replace: true});
     // setLoginUserEmail(data.email);
      })
      .catch(err => {
@@ -60,12 +67,16 @@ const Login = () => {
                 minLength: { value: 6, message: "password must be 6 character longer for security"},
                 })} className="input input-bordered w-full max-w-xs" />
                 {errors.password && <p className='text-red-500'>{errors.password?.message}</p>}
-                <label className="label"><span className="label-text">Forget Password?</span></label>
+                {/* <label className="label"><span className="label-text">Forget Password?</span></label> */}
+
+                <label className="label"><span className="label-text"></span></label>
+                <input type="text" className="input input-bordered w-full max-w-xs" />
             </div>
+
 
       <input className='btn btn-accent w-full' value="Login" type="submit" />
 
-          <div>
+            <div>
                 { userloginError && <p className='text-red-700'>{userloginError}</p>}
             </div>      
 

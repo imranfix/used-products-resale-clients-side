@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useSearchParams } from 'react-router-dom';
+import BookingModal from './BookingModal';
 import ProductItem from './ProductItem';
 
 
@@ -8,6 +8,7 @@ const CategoryId = () => {
     // const categoryList = useLoaderData();
     // const {name} = categoryList;
     const [products, setProducts] = useState([]);
+    const [books, setBooks] = useState(null);
 
 
     useEffect(  () =>{
@@ -25,10 +26,20 @@ const CategoryId = () => {
                     products?.map(product => <ProductItem
                     key={product._id}
                     product={product}
+                    setBooks={setBooks}
                     ></ProductItem>)
                 }
             </div>
-                
+                 
+                 {
+                        books &&
+                      <BookingModal
+                      books={books}
+                      setBooks={setBooks}
+                      ></BookingModal>
+   
+                 }
+                  
         </div>
     );
 };

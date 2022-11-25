@@ -9,6 +9,15 @@ const Navbar = () => {
     const {user, logOut} = useContext(AuthContext);
 
 
+    // logOut function:
+    const handleLogOutUser = () =>{
+      logOut()
+      .then(()=>{})
+      .catch(err => console.log(err));
+
+    }
+
+
   
 
     const navbarItems = <React.Fragment>
@@ -20,7 +29,9 @@ const Navbar = () => {
                   user?.uid ?
                   <>
                     <li><Link>Dashboard</Link></li>
-                    <li><button className='font-bold'>Log Out</button></li>
+                    <li><button
+                    onClick={handleLogOutUser}
+                     className='font-bold'>Log Out</button></li>
                   </>
                   :
                   <li><Link to="/login" className='font-bold'>Login</Link></li>

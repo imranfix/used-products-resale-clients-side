@@ -23,7 +23,7 @@ const SignUp = () => {
         .then(result => {
            const user = result.user;
            console.log(user);
-           toast('User Created Successfully done')
+           toast(' Created new User Successfully done')
 
            const userInfo = {
                 displayName: data.name
@@ -57,7 +57,7 @@ const SignUp = () => {
 
 
     return (
-        <div className='h-[720px] mt-8 mb-8 flex justify-center items-center card w-96 bg-base-100 shadow-xl'>
+        <div className='h-[720px] mt-8 mb-8 flex justify-center items-center  bg-base-100 shadow-xl'>
         <div className='w-96 p-7 me-8'>
             <h2 className='text-xl text-center'>Sign Up</h2>
 
@@ -84,7 +84,7 @@ const SignUp = () => {
             <input type="password" {...register("password", {
                 required: "password is required",
                 minLength: {value: 6, message: "Password must be 6 Character longer "},
-                pattern: {value: /(?=(.*[A-Z]))(?=(.*[0-9]))(?=(.*[!@#$%^&*()\-__+.]){1,})/, message: 'Password must have uppercase number and special character'
+                pattern: {value: /(?=(.*[A-Z]))(?=(.*[0-9]))(?=(.*[!@#$%^&*()\-__+.]){1,})/, message: 'Password must have uppercase, number and special character'
             }
             })}
              className="input input-bordered w-full max-w-xs" />
@@ -97,7 +97,7 @@ const SignUp = () => {
             
     <p>Already have an account <Link className="text-secondary" to="/login">Please Login</Link></p>
     <div className="divider">OR</div>
-    <button onClick={handleGoogleSignIn} className='btn btn-outline w-full mb-3'>CONTINUE WITH GOOGLE</button>
+    <button onClick={handleGoogleSignIn} className='btn btn-outline w-full mb-3'> GOOGLE</button>
         </div>
 
      </div>

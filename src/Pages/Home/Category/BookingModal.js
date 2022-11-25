@@ -15,7 +15,7 @@ const BookingModal = ({books, setBooks}) => {
       const price = form.price.value;
       const phone = form.phone.value;
 
-      const booking = {
+      const bookingInfo = {
         name,
          email,
           books,
@@ -26,7 +26,7 @@ const BookingModal = ({books, setBooks}) => {
       // 
       // 
       // 
-      console.log(booking);
+      console.log(bookingInfo);
       setBooks(null)
 
     }

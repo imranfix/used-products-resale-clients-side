@@ -35,7 +35,7 @@ const AuthProvider = ({children}) => {
             return signInWithEmailAndPassword(auth, email, password);
         }
 
-        // 3. signOut/logOut:
+        // 3. signOut/logOut user:
         const logOut = () => {
             setLoading(true);
             return signOut(auth);
@@ -44,7 +44,7 @@ const AuthProvider = ({children}) => {
              // 4. set auth state observer:
     useEffect ( () =>{
         const unsubscribe =  onAuthStateChanged(auth, currentUser =>{
-                // console.log('user observing');
+                // console.log('user checking');
                 setUser(currentUser);
                 setLoading(false);
             });

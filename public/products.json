@@ -1,71 +1,78 @@
 [
 
-    [
+    
         {
          "picture": "https://brooksysociety.com/wp-content/uploads/2021/09/Einstein.jpg",   
         "name": "Einstein: His Life and Universe",
+        "prodcut_id": "01",
         "location": "Dhaka",
         "resale price": "$240",
         "original-price": "$540",
         "yearsOfUse": "two years",
+        "posted": "10.30am",
         "sellersName": "Rakib"
         },
+
         {
          "picture": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1435338934i/25799556._UY500_SS500_.jpg",   
         "name": "Steve Jobs",
+        "prodcut_id": "02",
         "location": "Coxs-Bazar",
         "resale price": "$230",
         "original-price": "$430",
         "yearsOfUse": "three years",
+        "posted": "1.00pm",
         "sellersName": "Akib"
-        }
+        },
       
-    ],
-
-    
-    [
         {
          "picture": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1639163872l/58293924.jpg",   
         "name": "Book Of Night",
+        "prodcut_id": "03",
         "location": "Feni",
         "resale price": "$120",
         "original-price": "$250",
         "yearsOfUse": "two years",
+        "posted": "9.00am",
         "sellersName": "Renik"
         },
+
         {
          "picture": "https://media.newyorker.com/photos/5fc53ea865b1e636a7ab47b7/master/w_1600%2Cc_limit/TNY-BestBooks2020-EPJones.jpg",   
         "name": "The Known World",
+        "prodcut_id": "04",
         "location": "Rajbari",
         "resale price": "$460",
         "original-price": "$780",
         "yearsOfUse": "three years",
+        "posted": "12.00pm",
         "sellersName": "Jaman"
-        }
+        },
       
-    ],
-
-    [
+    
         {
          "picture": "https://i.insider.com/5b325e5a1ae6623b008b56a3?width=600&format=jpeg&auto=webp",   
         "name": "Why Nations Fail",
+        "prodcut_id": "05",
         "location": "Khulna",
         "resale price": "$210",
         "original-price": "$450",
         "yearsOfUse": "two years",
+        "posted": "2.00am",
         "sellersName": "Jolil"
         },
+
         {
          "picture": "https://dcbookstore.com/uploads/product/images/53154531799408-9781526660541.jpg",   
         "name": "China After",
+        "prodcut_id": "06",
         "location": "Dhaka",
         "resale price": "$230",
         "original-price": "$570",
         "yearsOfUse": "one years",
+        "posted": "7.00pm",
         "sellersName": "Rayhan"
         }
-      
-    ]
 
 
 ]

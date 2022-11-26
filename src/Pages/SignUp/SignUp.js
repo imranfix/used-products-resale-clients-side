@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
+import useToken from '../../hooks/useToken';
 
 
 
@@ -13,10 +14,19 @@ const SignUp = () => {
     const {createUser, updateUser, signInWithGoogle} = useContext(AuthContext);
     const [registerError, setRegisterError] = useState(''); //signUp error state
 
+    // 
+    const [buyerUserEmail, setBuyerUserEmail] = useState('');
+    const [token] = useToken(buyerUserEmail);
+
     // redirect:
     const navigate = useNavigate();
 
+    if(token){
+        navigate('/')
+    }
 
+
+    // 
     const hanldeSignUp = (data) =>{
         setRegisterError('');
 
@@ -25,7 +35,8 @@ const SignUp = () => {
         .then(result => {
            const user = result.user;
            console.log(user);
-           toast(' Created new User Successfully done.')
+           toast('Created new User Successfully done.')
+
 
         //  userInfo object:  
            const userInfo = {
@@ -34,7 +45,7 @@ const SignUp = () => {
 
            updateUser(userInfo)
            .then( () =>{
-            navigate('/')
+            collectUser( data.name, data.email,);
 
            })
            .catch(err => console.error(err));
@@ -45,6 +56,25 @@ const SignUp = () => {
             setRegisterError(err.message)
         });
     }
+
+
+    // 
+    const collectUser = (name, email) =>{
+        const user = {name, email};
+        fetch('http://localhost:5000/buyerUsers', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data => {
+           setBuyerUserEmail(email);
+        })
+    }
+
+
 
     
     // Google signIn:

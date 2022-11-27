@@ -65,7 +65,7 @@ const Login = () => {
             <div className='w-96 p-7'>
                 <h2 className='text-xl text-center'>Login</h2>
             <form onSubmit={handleSubmit(handleLoginForm)}>
-                <div className="form-control w-full max-w-xs">
+            <div className="form-control w-full max-w-xs">
                  <label className="label"><span className="label-text">Email</span></label>
                 <input type="text" {...register("email", {required: "Email Address is required in this field"})} className="input input-bordered w-full max-w-xs" />
                 {errors.email && <p className='text-red-500'>{errors.email?.message}</p>}
@@ -79,9 +79,20 @@ const Login = () => {
                 {errors.password && <p className='text-red-500'>{errors.password?.message}</p>}
                 {/* <label className="label"><span className="label-text">Forget Password?</span></label> */}
 
-                <label className="label"><span className="label-text"></span></label>
-                <input type="text" className="input input-bordered w-full max-w-xs" />
+                {/* <label className="label"><span className="label-text"></span></label>
+                <input type="text" className="input input-bordered w-full max-w-xs" /> */}
             </div>
+
+            <div className="form-control w-full max-w-xs mb-4">
+                 <label className="label"><span className="label-text"> Select User Type</span></label>
+                 <select className="select input-bordered w-full max-w-xs border">
+                    {/* <option disabled selected>User Type</option> */}
+                    <option>Buyer</option>
+                    <option>Seller</option>
+                 </select>
+               
+            </div>
+                
 
 
       <input className='btn btn-accent w-full' value="Login" type="submit" />

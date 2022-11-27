@@ -86,11 +86,9 @@ const Login = () => {
             <div className="form-control w-full max-w-xs mb-4">
                  <label className="label"><span className="label-text"> Select User Type</span></label>
                  <select className="select input-bordered w-full max-w-xs border">
-                    {/* <option disabled selected>User Type</option> */}
                     <option>Buyer</option>
                     <option>Seller</option>
-                 </select>
-               
+                 </select>               
             </div>
                 
 

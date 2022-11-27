@@ -1,6 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const MyOrder = () => {
     const {user} = useContext(AuthContext);
@@ -9,7 +11,7 @@ const MyOrder = () => {
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-    const { data: bookings = []} = useQuery({
+    const { data: bookings = [], refetch, isLoading} = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () =>{
             const res = await fetch(url, {
@@ -18,10 +20,14 @@ const MyOrder = () => {
                 }
             });
             const data = await res.json();
+            refetch();
             return data;
         }
     })
-
+    
+    if(isLoading){
+      return <LoadingSpinner></LoadingSpinner>
+    }
 
 
     return (

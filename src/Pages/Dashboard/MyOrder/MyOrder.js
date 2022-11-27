@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
@@ -51,7 +52,18 @@ const MyOrder = () => {
                 <th>{index+1}</th>
                 <td>{booking.books}</td>
                 <td>{booking.price}</td>
-                <td>Blue</td>
+                <td>
+                  {
+                      booking.price && !booking.paid && 
+                      <Link to={`/dashboard/paymentSystem/${booking._id}`}>
+                      <button className='btn btn-sm btn-info '>pay</button>
+                      </Link>
+                  }
+
+                  {
+                    booking.price && booking.paid && <span className='tex-primary'>paid</span>
+                  }
+                </td>
               </tr>
 
                     )

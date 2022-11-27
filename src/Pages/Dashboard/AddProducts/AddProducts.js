@@ -1,7 +1,7 @@
 import { Result } from 'postcss';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { json } from 'react-router-dom';
+import { json, useNavigate } from 'react-router-dom';
 
 
 
@@ -12,6 +12,7 @@ const AddProducts = () => {
     const imageHostKey= process.env.REACT_APP_imgbb_Key
     // console.log(imageHostKey)
 
+    const navigate = useNavigate();
    
     const handleAddProduct = data =>{
         console.log(data);
@@ -52,6 +53,9 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(result =>{
                 console.log(result)
+                toast.success(' Add Product Information Successfully')
+                navigate('/dashboard/allseller')
+               
             })
 
            }
@@ -59,7 +63,7 @@ const AddProducts = () => {
 
 
 
-        toast.success(' Add Product Information Successfully')
+       
     }   
 
 

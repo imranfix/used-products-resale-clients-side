@@ -5,7 +5,7 @@ import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 import SellerCard from './SellerCard';
 
 const AllSeller = () => {
-    
+
     const [deleteProduct, setDeleteProduct] = useState(null);
 
     const {data: sellers = [], isLoading, refetch } = useQuery({
@@ -45,6 +45,7 @@ const AllSeller = () => {
             if(data.deletedCount > 0 ){
                 refetch();
                 toast.success(`Selling ${seller.product} books is Delete now Successfully.`)
+              
             }
         })
     }

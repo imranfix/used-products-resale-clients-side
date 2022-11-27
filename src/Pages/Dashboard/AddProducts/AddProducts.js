@@ -15,7 +15,6 @@ const AddProducts = () => {
    
     const handleAddProduct = data =>{
         console.log(data);
-        const mobile = data.mobile;
         const image = data.image[0]
         const formData = new FormData();
         formData.append('image', image)

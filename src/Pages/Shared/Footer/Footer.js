@@ -13,21 +13,21 @@ const Footer = () => {
          className="p-10 mt-8 ">
         <div className='footer text-white'>
             <div>
-          <span className="footer-title">Services</span> 
+          <span className="footer-title">Category of Books</span> 
           <Link to="/" className="link link-hover">Second Hand Books</Link>
           <Link to="/" className="link link-hover">New Books</Link>
           <Link to="/" className="link link-hover">Old Books</Link>
           <Link to="/" className="link link-hover">Literature Books</Link>
         </div> 
         <div>
-          <span className="footer-title">Company</span> 
+          <span className="footer-title">Contact Us</span> 
           <Link to="/" className="link link-hover">About us</Link>
           <Link to="/" className="link link-hover">Contact</Link>
           <Link to="/" className="link link-hover">Email</Link>
           <Link to="/" className="link link-hover">Twitter</Link>
         </div> 
         <div>
-          <span className="footer-title">Legal</span> 
+          <span className="footer-title">Authorities</span> 
           <Link to="/" className="link link-hover">Terms of Condition</Link>
           <Link to="/" className="link link-hover">Privacy policy</Link>
         </div>

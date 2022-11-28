@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const CategoryCard = ({category}) => {
-    const {img, name, id, cat_id} = category;
+    const {img, name} = category;
 
 
 

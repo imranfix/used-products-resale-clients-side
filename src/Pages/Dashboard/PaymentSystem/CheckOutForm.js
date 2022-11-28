@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import { redirect } from 'react-router-dom';
 
 
 
@@ -7,11 +8,12 @@ const CheckOutForm = ({bookings}) => {
     const [cardError, setCardError] = useState('');
     const [clientSecret, setClientSecret] = useState("");
     const [success, setSuccess] = useState('');
+    const [processing, setProcessing] = useState(false);
     const [transactionId, setTransactionId] = useState("");
 
     const stripe = useStripe();
     const elements = useElements();
-    const {price, name, phone, location } = bookings;
+    const {price, _id, phone, location } = bookings;
 
     useEffect(() => {
       fetch("http://localhost:5000/create-payment-intent", {
@@ -54,6 +56,7 @@ const CheckOutForm = ({bookings}) => {
         }
 
         setSuccess('');
+        setProcessing(true);
 
         const {paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
           clientSecret,
@@ -72,9 +75,36 @@ const CheckOutForm = ({bookings}) => {
           return;
         }
         if(paymentIntent.status === "succeeded"){
-         setSuccess('congratulations your payment is completed');
-         setTransactionId(paymentIntent.id);
+          console.log('card info', card)
+         //  payment data store:
+         const payment = {
+              price, 
+              transactionId: paymentIntent.id,
+              bookingId: _id,
+              phone,
+              location
+         }
+
+        fetch('http://localhost:5000/payments', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(payment)
+        })
+        .then(res => res.json())
+        .then(data =>{
+          console.log(data);
+            if(data.insertedId){
+              setSuccess('congratulations your payment is completed');
+              setTransactionId(paymentIntent.id);
+     
+            }
+        })
+
         }
+        setProcessing(false);
+
        
 
 
@@ -91,6 +121,7 @@ const CheckOutForm = ({bookings}) => {
               color: '#424770',
               '::placeholder': {
                 color: '#aab7c4',
+               
               },
             },
             invalid: {
@@ -100,7 +131,7 @@ const CheckOutForm = ({bookings}) => {
         }}
       />
 
-  <button className='btn btn-sm btn-info mt-4' type="submit" disabled={!stripe || !clientSecret}>Pay</button>
+  <button className='btn btn-sm btn-info mt-4' type="submit" disabled={!stripe || !clientSecret || processing}>Pay</button>
 
     </form>
         <p className="text-red-400">{cardError}</p>

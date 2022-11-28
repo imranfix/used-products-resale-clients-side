@@ -6,8 +6,7 @@ import LoadingSpinner from '../../Shared/LoadingSpinner/LoadingSpinner';
 
 const MyOrder = () => {
     const {user} = useContext(AuthContext);
-
-
+   
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
@@ -20,7 +19,7 @@ const MyOrder = () => {
                 }
             });
             const data = await res.json();
-            refetch();
+            refetch(data);
             return data;
         }
     })
@@ -55,13 +54,14 @@ const MyOrder = () => {
                 <td>
                   {
                       booking.price && !booking.paid && 
-                      <Link to={`/dashboard/paymentSystem/${booking._id}`}>
-                      <button className='btn btn-sm btn-info '>pay</button>
+                      <Link to={`/dashboard/paymentSystem/${booking._id}`}
+                      >
+                      <button className='btn btn-sm btn-info '>Pay</button>
                       </Link>
                   }
 
                   {
-                    booking.price && booking.paid && <span className='tex-primary'>paid</span>
+                    booking.price && booking.paid && <span className='text-green-400'>Paid</span>
                   }
                 </td>
               </tr>

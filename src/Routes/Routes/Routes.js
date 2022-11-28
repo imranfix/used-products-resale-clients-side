@@ -70,20 +70,24 @@ const router = createBrowserRouter([
                 },
                 {
                     path: '/dashboard/addProducts',
-                    element: <AddProducts></AddProducts>
+                    element: <AdminRoute><AddProducts></AddProducts></AdminRoute>
                 },
 
                 {
                     path: '/dashboard/paymentSystem/:id',
-                    element: <AdminRoute>
-                        <PaymentSystem>
-
-                        </PaymentSystem>
-                    </AdminRoute>,
+                    element:  <PaymentSystem></PaymentSystem>,
                     loader: ({params}) => fetch(`http://localhost:5000/bookings/${params.id}`)
                 }
             ]
+        },
+
+        {
+            path: '*',
+            element: <div className="text-center mt-12"> <h1><span className="text-5xl text-green-600">Sorry!!</span> This route is not Found <br />
+                <span className="text-5xl">404</span>
+            </h1></div>
         }
+
 
         
 ])

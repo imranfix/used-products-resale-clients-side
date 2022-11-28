@@ -7,8 +7,10 @@ const ExtraSection = () => {
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src="https://www.theindependentbd.com/assets/news_images/Nilkhet.jpg" className="max-w-sm rounded-lg shadow-2xl" alt='' />
     <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 className="text-5xl font-bold">Buy Now Old Books Look New Conditions</h1>
+      <p className="py-6">
+      As far as book review sites go, Old Books is one of the most prestigious and trusted books protals in the business and offers an unbiased assessment of your book—which could be negative or positive. But their outstanding reviews come at a price. That being said, the review is worth it to many.
+        </p>
 
 
     </div>

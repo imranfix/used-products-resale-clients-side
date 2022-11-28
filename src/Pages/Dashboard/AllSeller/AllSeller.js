@@ -63,7 +63,8 @@ const AllSeller = () => {
         <div>
             <h3 className='text-2xl mt-2 '>Add Product: {sellers?.length}</h3>       
                 <div className='grid grid-cols-1 md:gird-cols-2 lg:grid-cols-2 gap-8'>
-                {
+                { 
+                    sellers &&
                     sellers?.map(seller => <SellerCard
                     key={seller._id}
                     seller={seller}

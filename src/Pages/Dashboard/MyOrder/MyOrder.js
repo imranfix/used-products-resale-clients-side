@@ -46,12 +46,12 @@ const MyOrder = () => {
     </thead>
     <tbody>
             {
-
+                
                 bookings?.map((booking, index) => 
                 <tr key={booking._id}>
                 <th>{index+1}</th>
                 <td>{booking.books}</td>
-                <td>{booking.price}</td>
+                <td>${booking.price}</td>
                 <td>
                   {
                       booking.price && !booking.paid && 

@@ -6,8 +6,10 @@ const Banner = () => {
         <div className="hero-overlay bg-opacity-60"></div>
              <div className="hero-content text-center text-neutral-content">
     <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <h1 className="mb-5 text-5xl font-bold">Old Books House</h1>
+      <p className="mb-5">
+          It's a huge market of copied and second-hand Books, printing presses, seals, banners, stationery products, computer graphics designers, street foods & many more. One can find almost all types of university, medical college, school-related and every other kind of books. If you want to make a seal or print a book or visiting card or design anything in the computer at the cheapest rate, then this is the place. I have found many rare books at an incredibly cheap rate while visiting the hundreds of book shops in here.
+        </p>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import logo from '../../../project-img/logo.png';
 
 
 
@@ -28,7 +29,7 @@ const Navbar = () => {
             {
                   user?.uid ?
                   <>
-                    <li><Link to="/dashboard">Dashboard</Link></li>
+                    <li><Link to="/dashboard" className='font-bold'>Dashboard</Link></li>
                     <li><button
                     onClick={handleLogOutUser}
                      className='font-bold'>Log Out</button></li>
@@ -53,7 +54,10 @@ const Navbar = () => {
 
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost normal-case text-xl">Old Books</Link>
+          <Link to="/" className="btn btn-ghost normal-case text-xl">
+            Old Books
+            <img className='w-12 px-2' src={logo} alt='' />
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal p-0">

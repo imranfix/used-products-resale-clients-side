@@ -11,7 +11,7 @@ const SellerCard = ({seller,  setDeleteProduct, deleteProduct, handleDeleteProdc
 
     // // delete product function:
     // const handleDeleteProdcut = (seller) =>{
-    //     fetch(`http://localhost:5000/sellers/${seller._id}`, {
+    //     fetch(`https://second-hand-books-server.vercel.app/sellers/${seller._id}`, {
     //         method: 'DELETE',
     //         headers:{
     //             authorization: `bearer ${localStorage.getItem('accessToken')}`

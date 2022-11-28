@@ -7,7 +7,7 @@ const AllUser = () => {
     const {data: buyerUsers=[], refetch} = useQuery({
         queryKey: ['buyerUsers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/buyerUsers');
+            const res = await fetch('https://second-hand-books-server.vercel.app/buyerUsers');
             const data = await res.json();
             return data;
         }
@@ -15,7 +15,7 @@ const AllUser = () => {
 
     // handle Admin function:
     const handleAdmin = id =>{
-        fetch(`http://localhost:5000/buyerUsers/admin/${id}`,{
+        fetch(`https://second-hand-books-server.vercel.app/buyerUsers/admin/${id}`,{
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

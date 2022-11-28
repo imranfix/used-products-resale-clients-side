@@ -61,7 +61,7 @@ const SignUp = () => {
     // 
     const collectUser = (name, email) =>{
         const user = {name, email};
-        fetch('http://localhost:5000/buyerUsers', {
+        fetch('https://second-hand-books-server.vercel.app/buyerUsers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -16,7 +16,7 @@ const CategoryId = () => {
     // const {data: products = []} = useQuery({
     //     queryKey: ['products'],
     //     queryFn: async() =>{
-    //         const res = await fetch('http://localhost:5000/products').then(res => res.json())
+    //         const res = await fetch('https://second-hand-books-server.vercel.app/products').then(res => res.json())
     //         const data = await res.json();
     //         return data;
     //     }
@@ -24,7 +24,7 @@ const CategoryId = () => {
 
 
     useEffect(  () =>{
-        fetch('http://localhost:5000/products')
+        fetch('https://second-hand-books-server.vercel.app/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     }, [])

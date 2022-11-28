@@ -13,7 +13,7 @@ const AllSeller = () => {
         queryFn: async () =>{
 
             try{
-                const res = fetch('http://localhost:5000/sellers', {
+                const res = fetch('https://second-hand-books-server.vercel.app/sellers', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -33,7 +33,7 @@ const AllSeller = () => {
     
     // delete product function:
     const handleDeleteProdcut = (seller) =>{
-        fetch(`http://localhost:5000/sellers/${seller._id}`, {
+        fetch(`https://second-hand-books-server.vercel.app/sellers/${seller._id}`, {
             method: 'DELETE',
             headers:{
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

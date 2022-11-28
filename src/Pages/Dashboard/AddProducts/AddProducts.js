@@ -41,7 +41,7 @@ const AddProducts = () => {
             }
 
 
-            fetch('http://localhost:5000/sellers', {
+            fetch('https://second-hand-books-server.vercel.app/sellers', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
